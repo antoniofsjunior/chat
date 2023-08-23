@@ -8,6 +8,20 @@ public class Contato {
 	private String bairro;
 	private String cidade;
 	private String estado;
+
+	public Contato() {}
+	
+	public Contato(String nome, String email, String telefone, String endereco, String bairro, String cidade,
+			String estado) {
+		super();
+		this.nome = nome;
+		this.email = email;
+		this.telefone = telefone;
+		this.endereco = endereco;
+		this.bairro = bairro;
+		this.cidade = cidade;
+		this.estado = estado;
+	}
 	
 	public String getNome() {
 		return nome;
