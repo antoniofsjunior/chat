@@ -1,6 +1,18 @@
 package edu.ifam.dra.chat.model;
 
 public class Contato {
+	
+	/*
+	{
+        "nome": "Isadora",
+        "email": "isadora@ifam.edu.br",
+        "telefone" : "(92) 99999-8888",
+        "endereco" : "Av. 7 de Setembro, 1975",
+        "bairro" : "Centro",
+        "cidade" : "Manaus",
+        "estado" : "AM"
+    }
+	 */
 	private String nome;
 	private String email;
 	private String telefone;
