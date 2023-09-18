@@ -1,23 +1,25 @@
-package edu.ifam.dra.chat.model;
+package edu.ifam.dra.chat.dto;
 
 import java.util.Calendar;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import edu.ifam.dra.chat.model.Mensagem;
 
-@Entity
-public class Mensagem {
+public class DTOMensagem {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private Calendar dataHora;
 	private String conteudo;
-	private Contato emissor;
-	private Contato receptor;
+	private Long emissor;
+	private Long receptor;
+	
+	public DTOMensagem(Mensagem mensagem) {
+		this.id = mensagem.getId();
+		this.dataHora = mensagem.getDataHora();
+		this.conteudo = mensagem.getConteudo();
+		this.emissor = mensagem.getEmissor().getId();
+		this.receptor = mensagem.getReceptor().getId();
+	}
 	
 	public Long getId() {
 		return id;
@@ -37,16 +39,16 @@ public class Mensagem {
 	public void setConteudo(String conteudo) {
 		this.conteudo = conteudo;
 	}
-	public Contato getEmissor() {
+	public Long getEmissor() {
 		return emissor;
 	}
-	public void setEmissor(Contato emissor) {
+	public void setEmissor(Long emissor) {
 		this.emissor = emissor;
 	}
-	public Contato getReceptor() {
+	public Long getReceptor() {
 		return receptor;
 	}
-	public void setReceptor(Contato receptor) {
+	public void setReceptor(Long receptor) {
 		this.receptor = receptor;
 	}
 	
